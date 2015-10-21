@@ -18,3 +18,7 @@ end
 service apache_name do
   action [:start, :enable]
 end
+
+file '/var/www/html/index.html' do
+  content 'hello, world!'
+end

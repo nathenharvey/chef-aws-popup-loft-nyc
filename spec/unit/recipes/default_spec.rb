@@ -24,7 +24,7 @@ describe 'apache::default' do
 
   context 'When all attributes are default, on an centos platform' do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new(:platform => 'centos', :version => '6.4')
+      runner = ChefSpec::ServerRunner.new(:platform => 'centos', :version => '7.1.1503')
       runner.converge(described_recipe)
     end
 

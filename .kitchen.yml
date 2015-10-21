@@ -1,12 +1,18 @@
 ---
 driver:
   name: vagrant
+  # Read more about the kitchen-ec2 driver at https://github.com/test-kitchen/kitchen-ec2
+  # name: ec2
+  # aws_ssh_key_id: <%= ENV['AWS_KEYPAIR_NAME'] %>
+  # availability_zone: <%= ENV['AWS_AVAILABILITY_ZONE'] %>
 
 provisioner:
   name: chef_zero
 
 platforms:
   - name: ubuntu-14.04
+    # driver:
+    #   image_id: ami-d85e75b0
   - name: centos-7.1
 
 suites:

@@ -7,19 +7,19 @@ describe 'apache::default' do
     expect(true).to be true
   end
 
-  it 'is running' do
-    expect(service 'apache2').to be_running
-  end
+  # it 'is running' do
+  #   expect(service 'apache2').to be_running
+  # end
 
-  it 'is installed' do
-    expect(package 'apache2').to be_installed
-  end
+  # it 'is installed' do
+  #   expect(package 'apache2').to be_installed
+  # end
 
   it 'is listening on the desired port' do
     expect(port 80).to be_listening
   end
 
   it 'responds to an http request' do
-    expect(command('wget http://localhost').exit_status).to eq 0
+    expect(Net::HTTP.get_response(URI('http://localhost')).code).to eq '200'
   end
 end
